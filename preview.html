@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    
+    <title>Add Book</title>
+    <style>
+        .container {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 50px;
+            box-shadow: 0px 0px 8px 1px #c1c1c1;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .dropdown {
+            display: block !important;
+            width: 100% !important;
+        }
+
+        .btn-light {
+            color: #212529;
+            background-color: white;
+            border-color: #ced4da;
+        }
+
+        .custom-control {
+            display: inline-block !important;
+        }
+
+        .toggle-off {
+            white-space: nowrap;
+        }
+
+        .form-group {
+            margin-bottom: 1.3rem;
+        }
+
+        .custom-control {
+            margin-right: 15px;
+        }
+
+        .header {
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            background-color: #007bff !important;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .main {
+            padding-top: 50px;
+        }
+
+        .header h1 {
+            text-align: center;
+            color: white;
+
+        }
+
+        .btn-success:not(:disabled):not(.disabled).active,
+        .btn-success:not(:disabled):not(.disabled):active,
+        .show>.btn-success.dropdown-toggle {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-info,
+        .btn-success,
+        .btn-success:hover {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .center-align {
+            text-align: center;
+        }
+
+        .label-div {
+            width: 100%;
+        }
+
+        .label-name {
+            width: 30%;
+            display: inline-block;
+        }
+
+        .label-value {
+            width: 30%;
+            display: inline-block;
+        }
+
+        .label-space {
+            padding-left: 10px;
+        }
+
+        .cover-pic {
+            width: 100px;
+        }
+
+        .checked {
+            color: rgb(206, 163, 83);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>View Book</h1>
+        </div>
+        <div class="main">
+            <form>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="bookName">Book Name</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="bookName"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="authorEmail">Author Email</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="authorEmail"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="website">Website</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="website"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="upload">Cover Picture</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <img class="label-space cover-pic" id="upload"></img></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="category">Categories</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="category"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="datepicker">Date Of Publication</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="datepicker"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group"></div>
+                <div class="form-row">
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="label-div">
+                                <div class="label-name">
+                                    <label for="isbn">ISBN Number</label>
+                                </div>
+                                <div class="label-value">
+                                    <span>: <label class="label-space" id="isbn"></label></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <div class="label-div">
+                                <div class="label-name">
+                                    <label for="price">Price</label>
+                                </div>
+                                <div class="label-value">
+                                    <span>: <label class="label-space" id="price"></label></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="type">Type</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="type"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="format">Format</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="format"></label></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="stock">In Stock</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="stock"></label></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="rating">Rating</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="rating"></label></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <div class="label-name">
+                            <label for="comment">Review</label>
+                        </div>
+                        <div class="label-value">
+                            <span>: <label class="label-space" id="comment"></label></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script>
+
+
+        document.getElementById("bookName").innerHTML = sessionStorage.getItem('bookName');
+        document.getElementById("authorEmail").innerHTML = sessionStorage.getItem('authorEmail');
+        document.getElementById("website").innerHTML = sessionStorage.getItem('website');
+        document.getElementById("upload").src = sessionStorage.getItem('path');
+        document.getElementById("category").innerHTML = sessionStorage.getItem('category');
+
+        document.getElementById("datepicker").innerText = sessionStorage.getItem('datepicker'); //issue
+        document.getElementById("isbn").innerHTML = sessionStorage.getItem('isbn');
+        document.getElementById("price").innerHTML = sessionStorage.getItem('price');
+        document.getElementById("type").innerHTML = sessionStorage.getItem('type');
+        document.getElementById("stock").innerHTML = sessionStorage.getItem('stock');
+        document.getElementById("format").innerHTML = sessionStorage.getItem('format');
+        document.getElementById("comment").innerHTML = sessionStorage.getItem('comment');
+
+        if (sessionStorage.getItem('rating') != "") {
+            switch (parseInt(sessionStorage.getItem('rating'))) {
+                case 1:
+                    document.getElementById("rating").innerHTML = "<span class='fa fa-star checked'></span>";
+                    break;
+                case 2:
+                document.getElementById("rating").innerHTML = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
+                    break;
+                case 3:
+                document.getElementById("rating").innerHTML = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
+                    break;
+                case 4:
+                document.getElementById("rating").innerHTML = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
+                    break;
+                case 5:
+                document.getElementById("rating").innerHTML = "<span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span><span class='fa fa-star checked'></span>";
+                    break;
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
